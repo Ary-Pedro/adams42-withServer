@@ -30,3 +30,4 @@ async def get_response(user_input):
     texto = chain.invoke(messages)
 
     return texto
+# python servidor.py
