@@ -13,17 +13,17 @@ from langchain_community.vectorstores import FAISS
 from langchain_community.docstore import InMemoryDocstore  # Importa o InMemoryDocstore
 import faiss  # Importa o FAISS
 
-
 #==========================================================================================
 #                                 Carregando arquivo
 #==========================================================================================
+
 def carregar_dados_json(arquivo):
     with open(arquivo, 'r', encoding='utf-8') as f:
         dados = json.load(f)
     return dados
 
 # Carrega os dados do arquivo JSON
-dados_api = carregar_dados_json('groq/api_data.json')
+dados_api = carregar_dados_json('api_data.json')
 print("Dados carregados.")  # Verificação
 
 #==========================================================================================
@@ -158,16 +158,18 @@ def retrieve_documents(query_embedding, k=5):
 #                                 CHAT LLM
 #==========================================================================================
 load_dotenv()
+
 async def get_response(user_input):
     llm = ChatGroq(
         model="mixtral-8x7b-32768",
-        temperature=0.3,
+        temperature=0.4,
         max_tokens=None,
         timeout=None,
         max_retries=2,
         api_key=os.environ.get("api"),
     )
 
+    user_input = input("Você: ")
     
     # Gera o embedding da pergunta do usuário
     query_embedding = generate_query_embedding(user_input)
@@ -180,12 +182,13 @@ async def get_response(user_input):
 
     # Criando as mensagens com o contexto
     messages = [
-        SystemMessage(content="any way speak only english. use o context requered."),
+        SystemMessage(content="any way speak only english. "), # use the context!
         HumanMessage(content=context),  # Adiciona o contexto
         HumanMessage(content=user_input)  # Adiciona a pergunta do usuário
     ]
 
     parser = StrOutputParser()
     chain = llm | parser
-    
+    texto = chain.invoke(messages)
     return texto
+
