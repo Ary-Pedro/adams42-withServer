@@ -19,7 +19,7 @@ async def get_response(user_input):
     )
 
     messages = [
-        SystemMessage(content="Você é um assistente que irá responder tudo em português."),
+        SystemMessage(content="any way speak only english."),
         HumanMessage(content=user_input)
     ]
 
