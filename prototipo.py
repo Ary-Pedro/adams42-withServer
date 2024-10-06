@@ -187,6 +187,5 @@ async def get_response(user_input):
 
     parser = StrOutputParser()
     chain = llm | parser
-    texto = chain.invoke(messages)
     
     return texto
