@@ -1,0 +1,27 @@
+{
+  "sapo": {
+    "nome": "Jorel",
+    "idade": 3,
+    "cor": "verde",
+    "habitat": "pântano",
+    "personalidade": "brincalhão e curioso",
+    "historia": {
+      "introducao": "Jorel é um sapo que vive em um pântano mágico, onde tudo é possível.",
+      "aventura": [
+        {
+          "titulo": "A Grande Corrida",
+          "descricao": "Um dia, Jorel decide participar de uma corrida entre os animais do pântano. Ele treina todos os dias e, no dia da corrida, está muito animado."
+        },
+        {
+          "titulo": "Encontro com a Fada do Pântano",
+          "descricao": "Durante suas aventuras, Jorel encontra uma fada que lhe concede um desejo. Ele deseja ser o sapo mais rápido do pântano."
+        },
+        {
+          "titulo": "O Desafio do Jacaré",
+          "descricao": "Um jacaré desafiador aparece e quer competir com Jorel. Ele usa seus novos poderes para vencer, mas aprende que a amizade é mais importante que ganhar."
+        }
+      ],
+      "conclusao": "No final, Jorel percebe que a verdadeira vitória é ter amigos e se divertir durante as aventuras."
+    }
+  }
+}
