@@ -26,5 +26,3 @@ async def chat(message: dict):
 
     response_text = await get_response(user_message)
     return JSONResponse(content={"response": response_text})
-
-# Executa o servidor

@@ -159,6 +159,7 @@ def retrieve_documents(query_embedding, k=5):
 #==========================================================================================
 load_dotenv()
 
+# Função para pegar a resposta do LLM e configura o cliente Groq
 async def get_response(user_input):
     llm = ChatGroq(
         model="mixtral-8x7b-32768",
@@ -169,7 +170,6 @@ async def get_response(user_input):
         api_key=os.environ.get("api"),
     )
 
-    user_input = input("Você: ")
     
     # Gera o embedding da pergunta do usuário
     query_embedding = generate_query_embedding(user_input)
