@@ -21,14 +21,8 @@ app.add_middleware(
 @app.post("/chat")
 async def chat(message: dict):
     user_message = message.get('message')
-    print(user_message)
     if not user_message:
         return JSONResponse(content={"error": "Mensagem não fornecida"}, status_code=400)
 
     response_text = await get_response(user_message)
     return JSONResponse(content={"response": response_text})
-
-# Executa o servidor
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=8080, log_level="info")
