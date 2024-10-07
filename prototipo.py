@@ -69,7 +69,7 @@ async def processar_pergunta(user_input, historico_mensagens):
 
     # Criando as mensagens com o contexto e histórico
     messages = [
-        SystemMessage(content="use context only if specified, below in the message."),
+        SystemMessage(content="You are an assistant who will answer everything in English. Use the context provided."),
         HumanMessage(content=context),  # Adiciona o contexto
     ] + historico_mensagens + [HumanMessage(content=user_input)]  # Adiciona o histórico e a pergunta atual
 
