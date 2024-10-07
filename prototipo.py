@@ -69,7 +69,7 @@ async def processar_pergunta(user_input, historico_mensagens):
 
     # Criando as mensagens com o contexto e histórico
     messages = [
-        SystemMessage(content="if i tell about exoplanet use the context provided! else not found about, generate your API response "),
+        SystemMessage(content="if i tell about exoplanet use the context provided! else not found about, generate your response "),
         HumanMessage(content=context),  # Adiciona o contexto
     ] + historico_mensagens + [HumanMessage(content=user_input)]  # Adiciona o histórico e a pergunta atual
 
