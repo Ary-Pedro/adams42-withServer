@@ -69,7 +69,7 @@ async def processar_pergunta(user_input, historico_mensagens):
 
     # Criando as mensagens com o contexto e histórico
     messages = [
-        SystemMessage(content="use the context provided"),
+        SystemMessage(content="use the context provided, else not found about, gemerete a personal response "),
         HumanMessage(content=context),  # Adiciona o contexto
     ] + historico_mensagens + [HumanMessage(content=user_input)]  # Adiciona o histórico e a pergunta atual
 
